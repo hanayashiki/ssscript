@@ -1,6 +1,6 @@
 apt update
 apt install -y shadowsocks
-CONFIG=`cat <<EOF
+cat > shadowsocks.json <<EOF
 {
     "server":"0.0.0.0",
     "server_port":3389,
@@ -12,6 +12,5 @@ CONFIG=`cat <<EOF
     "fast_open": false,
     "workers": 5
 }
-EOF`
-cat $CONFIG > shadowsocks.json
+EOF
 ssserver -d restart -c shadowsocks.json
