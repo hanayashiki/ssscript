@@ -1,5 +1,5 @@
 apt update
-apt install shadowsocks
+apt install -y shadowsocks
 CONFIG=`cat <<EOF
 {
     "server":"0.0.0.0",
